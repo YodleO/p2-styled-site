@@ -34,3 +34,7 @@ table{
     border: black 20px;
 }
 
+#smallen-this-thang{
+    height: 250px;
+    width: (16*height/9)px;
+}

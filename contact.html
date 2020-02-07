@@ -6,29 +6,30 @@
     </head>
     <body>
         <header>
-            <img src="Images/LinkedIn.png" alt="Me">
-            <h1>Kaleb Odle <br/>P2- Style Sheet</h1>
+            <img class = "profile" src="Images/LinkedIn.png" alt="Me">
+            <h1 id = "mainheader"> Kaleb Odle</h1>
+            <h1>P2- Style Sheet</h1>
 
         </header>
         <nav>
-            Home
-            Contact
-            Inches-to-Yards Conversion
+            <button><a href="./index.html">Home</a></button>
+            <button><a href="./contact.html">Contact</a></button>
+            <button><a href="./inch_yard_conversion.html">Inches-to-Yards Conversion</a></button>
         </nav>
         <hr>
         <main>
             <article>
-                <h1>Contact Me!</h1>
+                <h2>Contact Me!</h2>
                 <div class="container">
                     <form>
                         <label>Email</label>
                         <input type="text" placeholder="Your e-mail address">
                             
                         <label>Subject</label>
-                        <input type="text" placeholder="Subject line">
+                        <input type="text" placeholder="Subject">
         
                         <label>Message</label>
-                        <textarea placeholder="Write your message..."></textarea>
+                        <input type="text" placeholder="Write your message">
         
                         <input type="submit" value="Send Email">
                     </form>

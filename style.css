@@ -4,6 +4,10 @@ header {
     
 }
 
+#mainheader{
+    font-style: italic;
+}
+
 body{
     border-left: 50px;
     text-align: center;
@@ -25,3 +29,8 @@ aside{
     left: 0;
     border: 1px solid #111;
 }
+
+table{
+    border: black 20px;
+}
+

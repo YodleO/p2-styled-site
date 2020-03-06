@@ -1,10 +1,17 @@
-const red = document.getElementById("red")
-const green = document.getElementById("green")
-const blue = document.getElementById("blue")
-const test = document.getElementById("test")
+const first = document.getElementById("first")
+const second = document.getElementById("second")
+const third = document.getElementById("third")
+const end = document.getElementById("end")
 
-function backgroundPainter(){
-    document.body.style.backgroundColor = `rgb(${red},${green},${blue})`
-    test.innerHTML = `Red: ${red}, Green: ${green}, Blue: ${blue}`
+
+
+function averager(){
+    let f = parseInt(first.value)
+    let s = parseInt(second.value)
+    let t = parseInt(third.value)
+    //document.body.style.backgroundColor = `rgb(${r},${},${b})`
+    //test.innerHTML = `Red: ${r}, Green: ${g}, Blue: ${b}`
+    let average = (f + s + t) / 3
+    end.innerHTML = `Average: ${average}`
     
 }

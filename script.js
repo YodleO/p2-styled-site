@@ -3,6 +3,7 @@ const second = document.getElementById("second")
 const third = document.getElementById("third")
 const end = document.getElementById("end")
 
+const jokeURI = 'https://api.icndb.com/jokes/random?limitTo=[explicit]'
 
 
 function averager(){
@@ -15,7 +16,7 @@ function averager(){
     end.innerHTML = `Average: ${average}`
 }
 
-/*Note: The following code has been taken from https://github.com/profcase/js-gui-storage
+/*Note: The following code has been taken from https://github.com/profcase/js-gui-storage and https://github.com/profcase/js-gui-ajax
 This is my citation for the code taken.
 The values have been altered to work with my site.
 I would not have been able to do this on my own.
@@ -52,3 +53,27 @@ document.querySelector('#funcStart').addEventListener('click', () => {
     localStorage.setItem('number3', k)
     console.log('  Finished clicker click handler')
   })
+
+  document.addEventListener('click', event => {
+    if (event.target && event.target.id === 'getExplicitJoke') { updateWithJoke(event) }
+  })
+
+  // fetch information
+const getJoke = async () => {
+    try {
+      const response = await fetch(jokeURI)
+      const obj = await response.json()
+      console.log(`FETCHED. Response JSON ${obj}`)
+      const joke = obj.value.joke || 'No joke for you.'
+      return joke
+    } catch (error) { console.error(error) }
+  }
+  
+  // interact with DOM
+  const updateWithJoke = async (event) => {
+    try {
+      document.querySelector('#joke').innerHTML = ''
+      const answer = await getJoke()
+      document.querySelector('#joke').innerHTML = answer
+    } catch (error) { console.error(error) }
+  }
